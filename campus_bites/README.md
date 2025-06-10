@@ -6,12 +6,31 @@ A project for Tech Elevate to expose student on mobile development
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 
-## Git first repository
+## Git first repository ( using master branch to teach merging branch)
 git init
 git add .
 git commit -m "First commit"
+
+++first time ++
 git remote add origin https://github.com/username/repo.git
+++if using above++
+git push -u origin master
+
+++ else the normal push to main (not a good practice) ++
+
+git push -u main
+
+
+
+now we have added new branched named master, in order to merge with main branch 
+git pull origin main
+git checkout -b main
+git merge master
 git push -u origin main
+
+++Deleting master branch (optional if you dont want branching and only using main) ++
+git branch -d master       # Delete locally
+git push origin --delete master  # Delete on GitHub
 
 ## Useful Git Command 
 
