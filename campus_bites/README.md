@@ -24,6 +24,10 @@ git push -u main
 
 now we have added new branched named master, in order to merge with main branch 
 git pull origin main
+---> If there are merge conflicts, resolve them, then commit:
+    git add .
+    git commit -m "Merge remote main branch"
+
 git checkout -b main
 git merge master
 git push -u origin main
