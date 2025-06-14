@@ -53,3 +53,22 @@ PreferredSizeWidget buildCustomAppBarAccount() {
     centerTitle: true,
   );
 }
+
+PreferredSizeWidget buildCustomAppBarVendor() {
+  return AppBar(
+    backgroundColor: Colors.white,
+    elevation: 2,
+    shadowColor: Colors.black12,
+    toolbarHeight: 70,
+    title: const Text(
+      'CampusBites',
+      style: TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
+        color: Colors.black87,
+      ),
+    ),
+
+    centerTitle: true,
+  );
+}

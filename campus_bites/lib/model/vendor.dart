@@ -9,6 +9,7 @@ class Vendor {
   final double rating;
   final String deliveryTime;
   final bool isFavorite;
+  final Set<String> categoriesId;
 
   Vendor({
     required this.id,
@@ -18,6 +19,7 @@ class Vendor {
     required this.backgroundColor,
     required this.rating,
     required this.deliveryTime,
+    required this.categoriesId,
     this.isFavorite = false,
   });
 
@@ -27,6 +29,7 @@ class Vendor {
       name: name,
       subtitle: subtitle,
       imageUrl: imageUrl,
+      categoriesId: categoriesId,
       backgroundColor: backgroundColor,
       rating: rating,
       deliveryTime: deliveryTime,

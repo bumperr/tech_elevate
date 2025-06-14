@@ -36,13 +36,12 @@ List<FeaturedItem> generateFeaturedItems() {
 List<Category> generateCategories() {
   return [
     Category(id: '1', name: 'Burgers', icon: Icons.lunch_dining),
-    Category(id: '2', name: 'Sushi', icon: Icons.set_meal),
-    Category(id: '3', name: 'Salads', icon: Icons.eco),
+    Category(id: '2', name: 'Rice', icon: Icons.rice_bowl),
+    Category(id: '3', name: 'Snacks', icon: Icons.fastfood),
     Category(id: '4', name: 'Desserts', icon: Icons.cake),
     Category(id: '5', name: 'Drinks', icon: Icons.local_drink),
     Category(id: '6', name: 'Pizza', icon: Icons.local_pizza),
-    Category(id: '7', name: 'Chinese', icon: Icons.ramen_dining),
-    Category(id: '8', name: 'Coffee', icon: Icons.coffee),
+    Category(id: '7', name: 'Coffee', icon: Icons.coffee),
   ];
 }
 
@@ -60,52 +59,50 @@ List<Vendor> generateVendors() {
 
   final vendors = [
     {
-      'name': 'The Grill',
+      'name': 'Manja Burger',
       'type': 'American • Burgers',
       'rating': 4.5,
       'time': '25-30 min',
+      'categories_id': {'1'},
+      'image_URL':
+          'https://scontent.fpen1-1.fna.fbcdn.net/v/t39.30808-6/303285053_516179960511643_2624171546720026263_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QjIdxrzea-4Q7kNvwGRsCIR&_nc_oc=Adnrnk5Dvw8C7NPF1reRFU_Vb40g0cBTKYCeFaO6p2UygD7oYGQPkgNB9o_utEcD4Ck&_nc_zt=23&_nc_ht=scontent.fpen1-1.fna&_nc_gid=szykECY-FA6QcVBH_7MqHg&oh=00_AfMlIIdeUJ-wM2wb2N5M74sILYfHI4n4iB1rbv0yftE7XQ&oe=6851B86D',
     },
     {
-      'name': 'Campus Cafe',
-      'type': 'Coffee • Snacks',
+      'name': 'He and She Coffee',
+      'type': 'Coffee • Desserts',
       'rating': 4.2,
       'time': '15-20 min',
+      'categories_id': {'5', '7', '4'},
+      'image_URL':
+          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/43/20/23/they-also-outdoor-seat.jpg?w=1400&h=800&s=1',
     },
     {
-      'name': 'Sushi Express',
-      'type': 'Japanese • Sushi',
+      'name': 'Cafe V2 GEE & S',
+      'type': 'Malay • Rice',
       'rating': 4.7,
       'time': '30-35 min',
+      'categories_id': {'2'},
+      'image_URL':
+          'https://www.utp.edu.my/PublishingImages/Pages/Students/Student%20Development%20and%20Services/Facilities%20and%20Services/Cafeteria/2023/Village%202%20-%20Gee%20%26%20S.jpg',
     },
     {
-      'name': 'Pasta Paradise',
+      'name': 'Pasta V4',
       'type': 'Italian • Pasta',
       'rating': 4.4,
       'time': '20-25 min',
+      'categories_id': {'1', '2'},
+      'image_URL':
+          'https://www.utp.edu.my/PublishingImages/Pages/Students/Student%20Development%20and%20Services/Facilities%20and%20Services/Cafeteria/2023/Village%204%20-%20Zaitom%20Razak%20Cafe.jpg',
     },
+
     {
-      'name': 'Taco Town',
-      'type': 'Mexican • Tacos',
-      'rating': 4.3,
-      'time': '15-25 min',
-    },
-    {
-      'name': 'Smoothie Shack',
+      'name': 'V5 Afifah Beta',
       'type': 'Healthy • Smoothies',
       'rating': 4.6,
       'time': '10-15 min',
-    },
-    {
-      'name': 'Dragon Palace',
-      'type': 'Chinese • Noodles',
-      'rating': 4.1,
-      'time': '20-30 min',
-    },
-    {
-      'name': 'Bean & Brew',
-      'type': 'Coffee • Pastries',
-      'rating': 4.8,
-      'time': '5-10 min',
+      'categories_id': {'5', '7'},
+      'image_URL':
+          'https://www.utp.edu.my/PublishingImages/Pages/Students/Student%20Development%20and%20Services/Facilities%20and%20Services/Cafeteria/2023/Village%205%20(b)%20-%20Afifah%20Beta.jpg',
     },
   ];
 
@@ -117,8 +114,8 @@ List<Vendor> generateVendors() {
       id: (index + 1).toString(),
       name: vendor['name'] as String,
       subtitle: vendor['type'] as String,
-      imageUrl:
-          'https://via.placeholder.com/80x80/${colors[index].value.toRadixString(16).substring(2)}/FFFFFF?text=${vendor['name'].toString().split(' ').map((e) => e[0]).join('')}',
+      imageUrl: vendor['image_URL'] as String,
+      categoriesId: vendor['categories_id'] as Set<String>,
       backgroundColor: colors[index],
       rating: vendor['rating'] as double,
       deliveryTime: vendor['time'] as String,

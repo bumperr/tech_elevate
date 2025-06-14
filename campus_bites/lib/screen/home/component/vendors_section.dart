@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:campus_bites/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:campus_bites/screen/vendor/vendor_screen.dart';
 
 class VendorsSection extends ConsumerWidget {
   const VendorsSection({super.key});
@@ -48,9 +49,12 @@ class VendorsSection extends ConsumerWidget {
             final vendor = vendors[index];
             return GestureDetector(
               onTap: () {
-                // Navigate to vendor details
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Opening ${vendor.name}')),
+                // --------------------------------Navigate to vendor details----------
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => VendorScreen(vendorObj: vendor),
+                  ),
                 );
               },
               child: Container(
@@ -69,24 +73,18 @@ class VendorsSection extends ConsumerWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                width: 40,
-                                height: 40,
+                                width: 80,
+                                height: 80,
                                 decoration: BoxDecoration(
                                   color: Colors.white24,
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Center(
-                                  child: Text(
-                                    vendor.name
-                                        .split(' ')
-                                        .map((e) => e[0])
-                                        .join('')
-                                        .toUpperCase(),
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
+                                  child: Image.network(
+                                    vendor.imageUrl,
+                                    fit: BoxFit.cover,
+                                    width: 80,
+                                    height: 80,
                                   ),
                                 ),
                               ),
