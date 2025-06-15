@@ -95,6 +95,7 @@ class RegisterPage extends ConsumerWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         // Navigate and make HomePage the root of the navigation stack
+
                         Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(builder: (context) => HomePage()),

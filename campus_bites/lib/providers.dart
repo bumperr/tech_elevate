@@ -83,26 +83,26 @@ class VendorsNotifier extends StateNotifier<List<Vendor>> {
     state = generateVendors();
   }
 }
+
 /// Provides a [FeaturedItemsNotifier] to manage and expose a list of [FeaturedItem]s.
-    /// 
-    /// This [StateNotifierProvider] is responsible for creating and managing the lifecycle
-    /// of a [FeaturedItemsNotifier], which holds the state of a list of featured items.
-    /// 
-    /// The provider allows widgets to listen to changes in the list of featured items and
-    /// rebuild accordingly when the state updates. It is typically used to separate business
-    /// logic from UI and to facilitate state management in a scalable way.
-    /// 
-    /// Usage:
-    /// - Access the current list of featured items by watching this provider.
-    /// - Use the notifier to perform actions such as adding, removing, or updating featured items.
-    /// 
-    /// Example:
-    /// ```dart
-    /// final featuredItems = ref.watch(featuredItemsProvider);
-    /// ```
+///
+/// This [StateNotifierProvider] is responsible for creating and managing the lifecycle
+/// of a [FeaturedItemsNotifier], which holds the state of a list of featured items.
+///
+/// The provider allows widgets to listen to changes in the list of featured items and
+/// rebuild accordingly when the state updates. It is typically used to separate business
+/// logic from UI and to facilitate state management in a scalable way.
+///
+/// Usage:
+/// - Access the current list of featured items by watching this provider.
+/// - Use the notifier to perform actions such as adding, removing, or updating featured items.
+///
+/// Example:
+/// ```dart
+/// final featuredItems = ref.watch(featuredItemsProvider);
+/// ```
 // Providers
 final featuredItemsProvider =
-    
     StateNotifierProvider<FeaturedItemsNotifier, List<FeaturedItem>>((ref) {
       return FeaturedItemsNotifier();
     });

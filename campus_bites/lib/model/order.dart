@@ -1,4 +1,4 @@
-class order {
+class Order {
   final String id;
   final String vendorId;
   final String userId;
@@ -7,7 +7,7 @@ class order {
   final double totalPrice;
   final List<String> foodids;
 
-  order({
+  Order({
     required this.id,
     required this.vendorId,
     required this.userId,
